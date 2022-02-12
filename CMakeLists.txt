@@ -59,7 +59,7 @@ if (MSVC)
     
 elseif(UNIX AND NOT APPLE)
   target_link_libraries(TinyMusic PRIVATE  SDL2::SDL2-static Catch2::Catch2WithMain)
-  target_link_libraries(TinyMusic PRIVATE  X11 X11-xcb Xext xcb xkbcommon GL udev Xrandr )
+  target_link_libraries(TinyMusic PRIVATE  X11  Xext )
 
 endif()
 
