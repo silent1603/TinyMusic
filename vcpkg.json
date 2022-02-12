@@ -4,13 +4,13 @@
   "dependencies": [
     {
       "name" :"sdl2",
-      "version>=" : "2.0.16#3"
-
+      "version>=" : "2.0.16#3",
+      "features": [ "vulkan"]
     },
     {
       "name": "sdl2",
       "default-features": false,
-      "features": [ "x11" ],
+      "features": [ "x11" ,"vulkan"],
       "platform": "linux",
       "version>=" : "2.0.16#3"
 
@@ -37,12 +37,12 @@
     },
     {
       "name" : "imgui",
-      "features" : ["docking-experimental","sdl2-binding","opengl3-binding"],
+      "features" : ["docking-experimental","sdl2-binding","opengl3-binding","vulkan-binding"],
       "version>=" : "1.85"
     },
     {
       "name" : "imgui",
-      "features" : ["docking-experimental","sdl2-binding","dx11-binding"],
+      "features" : ["docking-experimental","sdl2-binding","dx11-binding","vulkan-binding"],
       "version>=" : "1.85",
       "default-features": false,
       "platform": "windows"
