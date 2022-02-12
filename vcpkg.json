@@ -37,8 +37,15 @@
     },
     {
       "name" : "imgui",
-      "features" : ["docking-experimental","sdl2-binding","opengl3-binding","dx11-binding"],
+      "features" : ["docking-experimental","sdl2-binding","opengl3-binding"],
       "version>=" : "1.85"
+    },
+    {
+      "name" : "imgui",
+      "features" : ["docking-experimental","sdl2-binding","dx11-binding"],
+      "version>=" : "1.85",
+      "default-features": false,
+      "platform": "windows"
     },
     {
       "name" : "glad",
@@ -61,5 +68,5 @@
       "version>=": "1.21.1#4"
     }
    ],
-   "builtin-baseline": "af833baf8a8d0270685298f4782b8436f9217b14"
+   "builtin-baseline": "8dbd66f5a7821ced1ed57696b50375a977006813"
 }
