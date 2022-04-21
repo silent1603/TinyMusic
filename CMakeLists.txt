@@ -19,6 +19,7 @@ find_package(sdl2-mixer CONFIG REQUIRED)
 find_package(sdl2-ttf CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(OpenAL CONFIG REQUIRED)
+find_package(EASTL CONFIG REQUIRED)
 find_path(STB_INCLUDE_DIRS "stb.h")
 
 set(PROJECT_PATH ${CMAKE_SOURCE_DIR}/TinyMusic)
@@ -52,7 +53,8 @@ target_link_libraries(TinyMusic PRIVATE SDL2::SDL2 SDL2::SDL2main
                                         PRIVATE SDL2::SDL2_mixer 
                                         PRIVATE SDL2::SDL2_ttf 
                                         PRIVATE spdlog::spdlog spdlog::spdlog_header_only 
-                                        PRIVATE OpenAL::OpenAL
+                                        PRIVATE OpenAL::OpenAL 
+                                        PRIVATE EASTL
 )
 
 if (MSVC)
