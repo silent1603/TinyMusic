@@ -3,7 +3,7 @@ if [ ! -d "./build" ]; then
     mkdir build
 fi
 
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 
 if [ ! -e "./vcpkg/vcpkg" ]; then
     echo isntall vcpkg
