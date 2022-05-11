@@ -27,7 +27,7 @@ set(SRC_PATH ${PROJECT_PATH}/src)
 set(RESOURCE_PATH ${PROJECT_PATH}/res)
 
 file(GLOB_RECURSE PROJECT_SOURCES ${SRC_PATH}/*.cpp)
-file(GLOB_RECURSE PROJECT_HEADERS ${SRC_PATH}/*.hpp)
+file(GLOB_RECURSE PROJECT_HEADERS ${SRC_PATH}/*.h)
 file(GLOB_RECURSE PROJECT_RESOURCES ${RESOURCE_PATH}/*.*)
 file(GLOB PROJECT_CONFIGS CMakeLists.txt Readme.md .gitattributes .gitignore .gitmodules LICENSE)
 
@@ -41,7 +41,7 @@ add_executable(TinyMusic ${PROJECT_HEADERS} ${PROJECT_SOURCES} ${RESOURCE_PATH})
 
 set_property(TARGET TinyMusic PROPERTY CXX_STANDARD 11)
 
-target_include_directories(TinyMusic PRIVATE ${STB_INCLUDE_DIRS}) 
+target_include_directories(TinyMusic PRIVATE ${STB_INCLUDE_DIRS} ) 
 
 target_link_libraries(TinyMusic PRIVATE SDL2::SDL2 SDL2::SDL2main 
                                         PRIVATE asio asio::asio 
