@@ -58,7 +58,7 @@ target_link_libraries(TinyMusic PRIVATE SDL2::SDL2 SDL2::SDL2main
 )
 
 if (MSVC)
-    
+  set_target_properties(TinySDL PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY ${RELEASE_PATH})
 elseif(UNIX AND NOT APPLE)
   target_link_libraries(TinyMusic PRIVATE  SDL2::SDL2-static Catch2::Catch2WithMain)
   target_link_libraries(TinyMusic PRIVATE  X11  Xext )
