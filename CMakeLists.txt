@@ -42,7 +42,7 @@ add_executable(TinyMusic ${PROJECT_HEADERS} ${PROJECT_SOURCES} ${RESOURCE_PATH})
 set_property(TARGET TinyMusic PROPERTY CXX_STANDARD 11)
 
 target_include_directories(TinyMusic PRIVATE ${STB_INCLUDE_DIRS} ) 
-
+target_include_directories(TinyMusic PRIVATE ${STB_INCLUDE_DIRS} ${SRC_PATH}/TinyCore ) 
 target_link_libraries(TinyMusic PRIVATE SDL2::SDL2 SDL2::SDL2main 
                                         PRIVATE asio asio::asio 
                                         PRIVATE Catch2::Catch2 
