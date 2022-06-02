@@ -12,7 +12,7 @@
 #define _CRTDBG_MAP_ALLOC
 #include <cstdlib>
 #include <crtdbg.h>
-
+#include <functional>
 #ifdef _DEBUG
 #define DBG_NEW new (_NORMAL_BLOCK, __FILE__, __LINE__)
 // Replace _NORMAL_BLOCK with _CLIENT_BLOCK if you want the
@@ -22,6 +22,7 @@
 #endif
 namespace TinyCore
 {
+	#define BIND_FUNCTION(x) std::bind(&ApplicationBase::x,this,std::placeholders::_1);
 	template <typename Derived>
 	class ApplicationBase
 	{
@@ -29,6 +30,8 @@ namespace TinyCore
 	public:
 		ApplicationBase()
 		{
+
+			
 			if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 			{
 				std::exit(1);
@@ -99,7 +102,6 @@ namespace TinyCore
 	private:
 		bool m_isRunning = false;
 		RenderSystem *m_pRenderSystem = nullptr;
-		// EventSystem* m_pEventSystem = nullptr;
 		ApplicationStateData m_structState;
 		friend Derived;
 	};
